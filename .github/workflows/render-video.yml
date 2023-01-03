@@ -37,7 +37,7 @@ jobs:
             ffmpeg \
             fonts-noto-core fonts-noto-cjk fonts-noto-color-emoji fonts-noto-mono
       - name: Install dependencies (node modules)
-        run: npm i && echo ${{ secrets.GITHUB_TOKEN }}
+        run: npm i
       - name: Inject configurations
         run: echo $WORKFLOW_INPUT | tee input-props.json | jq -C '.'  # Inject to file, inspect to logs
         env:
